@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --dark-mode: class;
+}
+
+:root {
+  --app-bg: #f8fafc;
+  --panel-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-light: rgba(0, 0, 0, 0.08);
+  --shadow-color: rgba(0, 0, 0, 0.04);
+  
+  --brand-primary: #111827;
+  --brand-accent: #f97316;
+  
+  /* Shared Glow */
+  --glow-green: #15803d;
+  --glow-orange: #ea580c;
+}
+
+.dark {
+  /* CRED-inspired Deep Dark Colors */
+  --app-bg: #09090b; 
+  --panel-bg: #131316;
+  --text-main: #f8fafc;
+  --text-muted: #8b8b99;
+  --border-light: rgba(255, 255, 255, 0.05);
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  
+  --brand-primary: #ffffff;
+  --brand-accent: #e37039; /* Copper/Neon Orange */
+  
+  --glow-green: #22c55e;
+  --glow-orange: #f97316;
+}
+
+@layer base {
+  body {
+    background-color: var(--app-bg);
+    color: var(--text-main);
+    @apply transition-colors duration-500 antialiased font-sans;
+  }
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 32px 0 var(--shadow-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  backdrop-filter: blur(8px);
+}
+
+/* Recharts Tooltip Customization */
+.recharts-tooltip-wrapper {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Custom Scrollbar for sleek look */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--border-light);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-muted);
+}
+
