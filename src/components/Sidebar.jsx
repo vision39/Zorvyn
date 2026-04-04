@@ -9,8 +9,6 @@ import {
   faCircleQuestion,
   faWallet
 } from '@fortawesome/free-solid-svg-icons';
-import { motion } from 'framer-motion';
-
 const Sidebar = ({ activeTab, setActiveTab }) => {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: <FontAwesomeIcon icon={faTableColumns} className="text-sm" /> },
@@ -37,15 +35,12 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
           <button 
             key={item.id}
             onClick={() => setActiveTab(item.id)}
-            className={`relative flex items-center gap-3 px-4 py-3.5 rounded-2xl text-[13px] font-bold tracking-wide transition-all duration-300 group ${
+            className={`relative flex items-center gap-3 px-4 py-3.5 rounded-2xl text-[13px] font-bold tracking-wide transition-[color,background-color,border-color,box-shadow] duration-300 border border-transparent group ${
               activeTab === item.id 
-                ? 'text-[var(--text-main)] bg-[var(--panel-bg)] shadow-[0_4px_20px_rgba(0,0,0,0.4)] border border-[var(--border-light)]' 
-                : 'text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--panel-bg)]'
+                ? 'text-[var(--text-main)] bg-[var(--panel-bg)] shadow-[0_4px_20px_rgba(0,0,0,0.2)] border-[var(--border-light)]' 
+                : 'text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--panel-bg)] hover:border-[var(--border-light)]'
             }`}
           >
-            {activeTab === item.id && (
-              <motion.div layoutId="activeNav" className="absolute left-0 w-1 h-6 bg-[var(--brand-accent)] rounded-r-lg" />
-            )}
             <div className={`${activeTab === item.id ? 'text-[var(--brand-accent)]' : 'group-hover:text-[var(--brand-accent)] transition-colors'}`}>
               {item.icon}
             </div>

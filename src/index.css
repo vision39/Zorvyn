@@ -17,13 +17,11 @@
   --brand-primary: #111827;
   --brand-accent: #f97316;
   
-  /* Shared Glow */
   --glow-green: #15803d;
   --glow-orange: #ea580c;
 }
 
 .dark {
-  /* CRED-inspired Deep Dark Colors */
   --app-bg: #09090b; 
   --panel-bg: #131316;
   --text-main: #f8fafc;
@@ -32,7 +30,7 @@
   --shadow-color: rgba(0, 0, 0, 0.4);
   
   --brand-primary: #ffffff;
-  --brand-accent: #e37039; /* Copper/Neon Orange */
+  --brand-accent: #e37039; 
   
   --glow-green: #22c55e;
   --glow-orange: #f97316;
@@ -46,7 +44,6 @@
   }
 }
 
-/* Glassmorphism Utilities */
 .glass-panel {
   background-color: var(--panel-bg);
   border: 1px solid var(--border-light);
@@ -61,13 +58,10 @@
   backdrop-filter: blur(8px);
 }
 
-/* Recharts Tooltip Customization */
 .recharts-tooltip-wrapper {
   border: none !important;
   outline: none !important;
 }
-
-/* Custom Scrollbar for sleek look */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
   height: 4px;
